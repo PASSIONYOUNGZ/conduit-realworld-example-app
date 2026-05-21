@@ -17,13 +17,18 @@
   ],
   "scripts": {
     "dev": "concurrently --names 'Node,Vite' -c 'green,blue' 'npm run dev -w backend' 'npm run dev -w frontend'",
+    "lint": "eslint .",
     "sqlz": "npx -w backend sequelize-cli",
     "start": "npm run build -w frontend && npm run start -w backend",
     "test": "vitest"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.4",
     "@vitejs/plugin-react-swc": "^4.2.3",
     "concurrently": "^9.2.1",
+    "eslint": "^9.39.4",
+    "globals": "^17.6.0",
+    "jsdom": "^24.1.3",
     "vitest": "^4.0.18"
   }
 }
