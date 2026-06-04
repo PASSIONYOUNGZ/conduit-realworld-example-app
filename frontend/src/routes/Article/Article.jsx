@@ -25,7 +25,7 @@ function Article() {
   const [article, setArticle] = useState(state || {});
   const { title, body, tagList, createdAt, author } = article || {};
   const wordCount = countArticleWords(body);
-  const readingMinutes = Math.max(1, Math.round(wordCount / 300));
+  const readingMinutes = Math.max(1, Math.ceil(wordCount / 300));
   const { headers, isAuth } = useAuth();
   const navigate = useNavigate();
   const { slug } = useParams();
@@ -56,7 +56,7 @@ function Article() {
             {body && <Markdown options={{ forceBlock: true }}>{body}</Markdown>}
             {Object.keys(article).length > 0 && (
               <p className="text-muted article-reading-stats">
-                This article has {wordCount} words, estimated reading time {readingMinutes} minutes
+                本文共 {wordCount} 字，预计阅读 {readingMinutes} 分钟
               </p>
             )}
             <ArticleTags tagList={tagList} />
