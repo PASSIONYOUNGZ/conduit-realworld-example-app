@@ -56,7 +56,7 @@ function Article() {
             {body && <Markdown options={{ forceBlock: true }}>{body}</Markdown>}
             {Object.keys(article).length > 0 && (
               <p className="text-muted article-reading-stats">
-                本文共 {wordCount} 字，预计阅读 {readingMinutes} 分钟
+                This article has {wordCount} words, estimated reading time {readingMinutes} minutes
               </p>
             )}
             <ArticleTags tagList={tagList} />
